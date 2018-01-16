@@ -9,6 +9,10 @@ type Cond struct {
 	sync.Cond
 }
 
+type Map struct {
+	sync.Map
+}
+
 func NewCond(l Locker) *Cond {
 	return (*Cond)(unsafe.Pointer(sync.NewCond(l)))
 }
